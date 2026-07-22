@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
+{
+    "name": "Pulse",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "image": "mcr.microsoft.com/devcontainers/dotnet:2-10.0",
+    "hostRequirements": {
+        "cpus": 4
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.powershell",
+                "pspester.pester-test",
+                "ms-dotnettools.csharp",
+                "github.vscode-pull-request-github",
+                "justin-grote.github-actions-enhanced"
+            ],
+            "settings": {
+                // We are developing a binary module so without this, changes aren't seen.
+                "pester.runTestsInNewProcess": true
+            }
+        }
+    },
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "dotnet restore && dotnet tool restore",
+    "postStartCommand": "/usr/bin/pwsh -c 'iwr bit.ly/modulefast | iex;install-modulefast -verbose -debug';sudo chmod +x (command pwsh).Source"
+}

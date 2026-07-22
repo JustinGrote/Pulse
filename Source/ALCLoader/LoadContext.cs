@@ -16,10 +16,10 @@ public class LoadContext : AssemblyLoadContext
     private readonly AssemblyName _thisAssemblyName;
     private readonly string _assemblyDir;
 
-    private LoadContext(string mainModulePathAssemblyPath)
+    private LoadContext(string assemblyPath)
         : base(name: "ALCLoader", isCollectible: false)
     {
-        _assemblyDir = Path.GetDirectoryName(mainModulePathAssemblyPath) ?? "";
+        _assemblyDir = Path.GetDirectoryName(assemblyPath) ?? "";
         _thisAssembly = typeof(LoadContext).Assembly;
         _thisAssemblyName = _thisAssembly.GetName();
     }

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Source/ALCLoader/ALCLoader.csproj" />
+  <Project Path="Source/PowerShell/PowerShell.csproj" />
+</Solution>

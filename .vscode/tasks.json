@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "windows": {
+    "options": {
+      "shell": {
+        "executable": "pwsh.exe"
+      }
+    }
+  },
+  "options": {
+    "shell": {
+      "executable": "pwsh",
+      "args": ["-noprofile", "-noninteractive", "-command"]
+    }
+  },
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "Invoke-Build Clean,Build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true,
+        "showReuseMessage": false
+      },
+      "icon": {
+        "color": "terminal.ansiYellow",
+        "id": "tools"
+      }
+    },
+    {
+      "label": "test",
+      "type": "shell",
+      "command": "Invoke-Build Test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true,
+        "showReuseMessage": false
+      },
+      "icon": {
+        "color": "terminal.ansiGreen",
+        "id": "check"
+      }
+    }
+  ]
+}

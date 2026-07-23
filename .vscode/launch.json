@@ -1,0 +1,12 @@
+{
+  "configurations": [
+    {
+      "name": "PowerShell: Binary Module Interactive",
+      "type": "PowerShell",
+      "request": "launch",
+      // "script": "Import-Module ./Artifacts/Module/Pulse.psd1 -Verbose",
+      "createTemporaryIntegratedConsole": true,
+      "attachDotnetDebugger": true
+    }
+  ]
+}

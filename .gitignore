@@ -1,0 +1,29 @@
+## Visual Studio files
+.vs/
+*.user
+*.suo
+*.userprefs
+*.pidb
+*.csproj.user
+*.sln.cache
+
+## Build artifacts
+Artifacts/
+obj/
+bin/
+*.nupkg
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## PowerShell
+*.ps1xml~
+
+## Editor files
+.idea/
+*.swp
+*~
+
+## dotnet tools
+.config/dotnet-tools.json
